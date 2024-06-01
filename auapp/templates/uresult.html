@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+	<style>
+		.solid {border-style: solid;}
+		p.solid {outline-style: solid;}
+		
+	</style>
+	<h1>Poll Result</h1>
+		<form>
+		<div class="solid" >
+		<h2> {{ d.ques }}</h2> 
+		{{ data.op1 }} =      {{ data.option_one_count }} Vote
+		<br/><br/>
+		{{ data.op2 }} =  {{ data.option_two_count }} Vote
+		<br/><br/>
+		{{ data.op3 }}  =	{{ data.option_three_count }} Vote
+		<br/><br/>
+		</div>
+		<p = class="solid" > TOTAL VOTES =  {{ data.total }} Votes </p>
+		
+		</form>
+
+
+{% endblock %}

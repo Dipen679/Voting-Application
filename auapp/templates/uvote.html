@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+	<style>
+		.solid {border-style: solid;}
+	</style>
+	<h1>Caste your Vote</h1>
+		<form method="POST">
+		{% csrf_token %}
+		<div class="solid" >
+		<h2> {{ data.ques }} </h2>
+		<input type="radio" value="op1" name="poll" required /> {{ data.op1 }} 
+		<br/><br/>
+		<input type="radio" value="op2" name="poll" required /> {{ data.op2 }} 
+		<br/><br/>
+		<input type="radio" value="op3" name="poll" required /> {{ data.op3 }} 
+		<br/><br/>
+		<input type="submit" />
+		</div>
+		</form>
+
+
+{% endblock %}

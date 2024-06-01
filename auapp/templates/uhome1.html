@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+	<style>
+		.abc a {color:blue;margin:5px}
+	</style>
+	<h1> Available Polls </h1>
+		<div class="abc" >
+		<table border="5" style="width:80%">
+				<tr> 
+					<th> Question: </th>
+					<th> Click to Vote </th>
+					<th> Show Result </th>	
+					<th> Delete </th>	
+				</tr> 
+				{% for d in data %}
+				<tr>
+					<td> {{d.ques}} </td>
+					<td> <a href="{% url 'uvote' d.id %}"> Vote </a> </td>
+					<td> <a href="{% url 'uresult' d.id %}"> View Result </a> </td>	
+					<td> <a href="{% url 'remques' d.id %}" onclick="return confirm('Are you Sure?')"> Delete </a></td>
+				</tr>
+				{% endfor %}
+		</table> 
+		</div>
+{% endblock %}
